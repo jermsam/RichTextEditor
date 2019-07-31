@@ -1,5 +1,6 @@
 # RichTextEditor
 Simple Text Editor that allows for image input
+Simport Stripe Card Input included
 
 # Description
 
