@@ -137,6 +137,7 @@ export default ({ onSubmit, ...rest }) => {
               value={text}
             />
           </Box>
+          {image&&
           <Box direction="row" align="stretch">
             <Box alignSelf="end" direction="row">
               <Button
@@ -153,6 +154,7 @@ export default ({ onSubmit, ...rest }) => {
               />
             </Box>
           </Box>
+          }
         </Box>
       </Keyboard>
     </Box>
