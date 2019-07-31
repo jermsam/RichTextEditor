@@ -6,7 +6,7 @@ import { StripeProvider, Elements } from "react-stripe-elements";
 
 import StripeCardInput from "./StripeCardInput";
 
-export default () => {
+export default props => {
   const [stripe, setStripe] = React.useState(null);
 
   const [stripeLoaded, setStripeLoaded] = React.useState({});
@@ -43,7 +43,7 @@ export default () => {
       {stripeLoaded ? (
         <StripeProvider {...{ stripe }}>
           <Elements>
-            <StripeCardInput />
+            <StripeCardInput {...props} />
           </Elements>
         </StripeProvider>
       ) : null}

@@ -5,7 +5,7 @@ import { Box, Button, Keyboard, TextArea, Image, TextInput } from "grommet";
 
 import { FormClose, Camera, Gallery, Close } from "grommet-icons";
 
-export default () => {
+export default ({ onSubmit, ...rest }) => {
   const [text, setText] = React.useState("");
   const [image, setImage] = React.useState("");
   const [paragraphs, setParagraphs] = React.useState([]);
@@ -45,16 +45,16 @@ export default () => {
   const onEnter = React.useCallback(
     event => {
       if (allowEnter) {
-        console.log({
+        onSubmit({
           image,
-          paragraphs: paragraphs.length
+          paragraphs
         });
         setImage("");
         setText("");
       }
       setAllowEnter(true);
     },
-    [paragraphs, image, allowEnter]
+    [paragraphs, image, allowEnter, onSubmit]
   );
 
   const onFilesAdded = event => {
@@ -116,11 +116,7 @@ export default () => {
       </Box>
       <Keyboard
         onEnter={onEnter}
-        onKeyDown={e => {
-          if (e.keyCode === 16) {
-            setAllowEnter(false);
-          }
-        }}
+        onKeyDown={e => setAllowEnter(e.keyCode !== 16)}
       >
         <Box
           direction="row"
@@ -147,7 +143,13 @@ export default () => {
           </Box>
 
           <Box flex style={{ minWidth: "120px" }}>
-            <TextArea size="large" plain onChange={changeText} value={text} />
+            <TextArea
+              {...rest}
+              size="large"
+              plain
+              onChange={changeText}
+              value={text}
+            />
           </Box>
         </Box>
       </Keyboard>
