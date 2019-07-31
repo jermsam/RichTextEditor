@@ -2,8 +2,8 @@ import React from "react";
 import WebCamera from "react-html5-camera-photo";
 import "react-html5-camera-photo/build/css/index.css";
 import { Box, Button, Keyboard, TextArea, Image, TextInput } from "grommet";
-
 import { FormClose, Camera, Gallery, Close } from "grommet-icons";
+import CameraModal from "./CameraModal";
 
 export default ({ onSubmit, ...rest }) => {
   const [text, setText] = React.useState("");
@@ -104,14 +104,14 @@ export default ({ onSubmit, ...rest }) => {
         )}
 
         {showCamera && (
-          <Box fill="horizontal">
+          <CameraModal onClose={() => setShowCamera(false)}>
             <WebCamera
               onTakePhoto={dataUri => {
                 setImage(dataUri);
                 setShowCamera(false);
               }}
             />
-          </Box>
+          </CameraModal>
         )}
       </Box>
       <Keyboard
