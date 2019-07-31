@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { Grommet, Box, Heading, Text } from "grommet";
 import theme from "./theme";
 import RichTextEditor from "./components/RichTextEditor";
-import { StripeProvider, Elements } from "react-stripe-elements";
 
 import "./styles.css";
 import StripeCardEditor from "./components/StripeCardEditor";
