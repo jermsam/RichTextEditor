@@ -1,15 +1,8 @@
 import React from "react";
 import WebCamera from "react-html5-camera-photo";
 import "react-html5-camera-photo/build/css/index.css";
-import {
-  Box,
-  Button,
-  Keyboard,
-  TextArea,
-  Image,
-  TextInput,
-  Layer
-} from "grommet";
+import { Box, Button, Keyboard, TextArea, Image, TextInput } from "grommet";
+import CameraModal from "./CameraModal";
 
 import { Camera, Gallery, Close } from "grommet-icons";
 
@@ -137,32 +130,26 @@ export default ({ onSubmit, ...rest }) => {
               value={text}
             />
           </Box>
-          {image&&
-          <Box direction="row" align="stretch">
-            <Box alignSelf="end" direction="row">
-              <Button
-                round
-                icon={
-                  <Image
-                    fit="cover"
-                    src={image}
-                    width="40px"
-                    height="40px"
-                    style={{ borderRadius: "100%" }}
-                  />
-                }
-              />
+          {image && (
+            <Box direction="row" align="stretch">
+              <Box alignSelf="end" direction="row">
+                <Button
+                  round
+                  icon={
+                    <Image
+                      fit="cover"
+                      src={image}
+                      width="40px"
+                      height="40px"
+                      style={{ borderRadius: "100%" }}
+                    />
+                  }
+                />
+              </Box>
             </Box>
-          </Box>
-          }
+          )}
         </Box>
       </Keyboard>
     </Box>
   );
 };
-
-const CameraModal = ({ children, onClose }) => (
-  <Layer position="center" modal onClickOutside={onClose} onEsc={onClose}>
-    {children}
-  </Layer>
-);
