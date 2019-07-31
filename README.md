@@ -19,6 +19,6 @@ yarn start
 
 ```
 
-# Available on:
+# Available at:
 
 https://codesandbox.io/s/github/jermsam/RichTextEditor/tree/master/
