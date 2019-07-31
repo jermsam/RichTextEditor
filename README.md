@@ -1,9 +1,7 @@
 # RichTextEditor
-Created with CodeSandbox
+Simple Text Editor that allows for image input
 
 # Description
-
-Simple Text Editor that allows for image input
 
 Uses grommet-v2 and react-html5-camera-photo with react
 
