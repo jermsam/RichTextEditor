@@ -6,6 +6,7 @@ import RichTextEditor from "./components/RichTextEditor";
 
 import "./styles.css";
 import StripeCardEditor from "./components/StripeCardEditor";
+import TextAvatarEditor from "./components/TextAvatarEditor";
 
 function App() {
   const [cardError, setCardError] = React.useState("");
@@ -55,6 +56,19 @@ function App() {
             {cardError}
           </Text>
         )}
+      </Box>
+      <Box>
+        <Heading level="2" margin={{ bottom: "none" }}>
+          {" "}
+          TextAvatar Editor
+        </Heading>
+        <Text>My 2 cents on rich text editor with avatar inputs</Text>
+      </Box>
+      <Box>
+        <TextAvatarEditor
+          placeholder="Your two cents buddy ..."
+          onSubmit={printSubmittedValue}
+        />
       </Box>
     </Grommet>
   );
