@@ -8,6 +8,20 @@ import "./styles.css";
 import StripeCardEditor from "./components/StripeCardEditor";
 
 function App() {
+  const [cardError, setCardError] = React.useState("");
+
+  const printSubmittedValue = value => {
+    console.log(value);
+  };
+
+  const onCardChange = ({ error }) => {
+    if (error) {
+      setCardError(error.message);
+    } else {
+      setCardError("");
+    }
+  };
+
   return (
     <Grommet theme={theme} style={{ height: "100vh" }}>
       <Box>
@@ -18,7 +32,10 @@ function App() {
         <Text>My 2 cents on rich text editor with image inputs</Text>
       </Box>
       <Box>
-        <RichTextEditor />
+        <RichTextEditor
+          placeholder="Keep us engaged ..."
+          onSubmit={printSubmittedValue}
+        />
       </Box>
       <Box>
         <Heading level="2" margin={{ bottom: "none" }}>
@@ -28,7 +45,16 @@ function App() {
         <Text>My 2 cents on stripe input element </Text>
       </Box>
       <Box>
-        <StripeCardEditor />
+        <StripeCardEditor onChange={onCardChange} />
+        {cardError && (
+          <Text
+            margin={{ horizontal: "small" }}
+            alignSelf="start"
+            color="error"
+          >
+            {cardError}
+          </Text>
+        )}
       </Box>
     </Grommet>
   );
