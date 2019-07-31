@@ -1,2 +1,0 @@
-# RichTextEditor
-Created with CodeSandbox
