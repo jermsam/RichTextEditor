@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+
+import React from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import { Box } from "grommet";
 
