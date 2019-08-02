@@ -96,11 +96,10 @@ function App() {
             />
           </Box>
           <Box>
-            <Heading level="2" margin={{ bottom: "none" }}>
-              {" "}
-              TextAvatar Editor
-            </Heading>
-            <Text>My 2 cents on rich text editor with avatar inputs</Text>
+            <Text>
+              Rich Text Editor and Stripe Card Editor used to make a
+              DonationForm
+            </Text>
           </Box>
           <Box>
             <DonationForm
