@@ -98,7 +98,7 @@ function App() {
           <Box>
             <Text>
               Rich Text Editor and Stripe Card Editor used to make a
-              DonationForm
+              DonationForm.
             </Text>
           </Box>
           <Box>
