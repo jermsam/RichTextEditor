@@ -21,3 +21,6 @@ yarn start
 # Available at:
 
 https://codesandbox.io/s/github/jermsam/RichTextEditor/tree/master/
+
+# Seems like they like it:
+https://github.com/grommet/grommet/issues/3071
