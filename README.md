@@ -22,5 +22,5 @@ yarn start
 
 https://codesandbox.io/s/github/jermsam/RichTextEditor/tree/master/
 
-# Seems like they like it:
+# A viable solution. Check:
 https://github.com/grommet/grommet/issues/3071
